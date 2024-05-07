@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import ItemsDisplay from "./ItemsDisplay";
 
 export default function CameraList() {
   const [cameras, setCameras] = useState([]);
@@ -40,19 +41,7 @@ export default function CameraList() {
 
   if (loading) {return (<div>Carregando...</div>)}else{
 
-  
-    return (
-      <div>
-        <h1>Camera List</h1>
-        {errorMessage ? <p>{errorMessage}</p> : ""}
-        <ul>
-          {cameras.map((camera) => (
-            <li key={camera.id}>
-              <strong>{camera.name}</strong> - {camera.description}
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
+    return <ItemsDisplay items={cameras} />  
+
   }
 }

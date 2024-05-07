@@ -8,22 +8,14 @@ import FetchData from './fetchData.js';
 import CamerasScreen from './screens/CamerasScreen.js';
 import CadastrarScreen from './screens/CadastrarScreen.js';
 import LoginScreen from './screens/Login.js';
-import { Link } from 'react-router-dom';
+import ErrorScreen from './screens/ErrorScreen.js';
 
-import { Outlet } from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="App">
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/itens">Itens</Link>
-        <Link to="/login">Login</Link>        
-        <Link to="/cadastrar">Cadastrar</Link>        
-        <Link to="/contact">Contato</Link>
-        <Link to="/logout">Logout</Link> 
-      </nav>
-    <Outlet/>
+    <LoginScreen />
     </div>
   );
 }

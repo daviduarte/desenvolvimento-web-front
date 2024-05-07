@@ -1,4 +1,5 @@
 import './App.css';
+import './styles/ExemploCss.css'
 import Pergunta from './Pergunta.js'
 import PagodeQuestion from './pagode.js';
 import { useState } from 'react';
@@ -8,14 +9,31 @@ import FetchData from './fetchData.js';
 import CamerasScreen from './screens/CamerasScreen.js';
 import CadastrarScreen from './screens/CadastrarScreen.js';
 import LoginScreen from './screens/Login.js';
-import ErrorScreen from './screens/ErrorScreen.js';
+import { Link } from 'react-router-dom';
+import { Navbar, Nav } from "react-bootstrap";
+import logo from './assets/logo192.png';
 
-
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-    <LoginScreen />
+    <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar.Brand href="/">
+        Your Brand</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link as={Link} to="/">Home</Nav.Link>
+          <Nav.Link as={Link} to="/itens">Itens</Nav.Link>
+          <Nav.Link as={Link} to="/contact">Contato</Nav.Link>
+          <Nav.Link as={Link} to="/login">Login</Nav.Link>
+          <Nav.Link as={Link} to="/cadastrar">Cadastrar</Nav.Link>
+          <Nav.Link as={Link} to="/logout">Logout</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+    <Outlet/>
     </div>
   );
 }

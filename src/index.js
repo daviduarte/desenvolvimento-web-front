@@ -1,14 +1,15 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import App2 from './App_router.js'
+//import App from './App';
+import App from './App.js'
 import reportWebVitals from './reportWebVitals';
 
 import {createBrowserRouter, Navigate, RouterProvider} from 'react-router-dom';
 import ErrorScreen from './screens/ErrorScreen.js';
 
-import Home from './screens/Home.js';
+import Home from './screens/Home2.js';
 import Contact from './screens/Contact.js';
 
 import ItemScreen from './screens/ItemScreen.js';
@@ -18,11 +19,15 @@ import CadastrarScreen from './screens/CadastrarScreen.js';
 import Login from './screens/Login.js';
 import CamerasScreen from './screens/CamerasScreen.js';
 import Logout from './screens/Logout.js';
+import InlineComponent from './screens/InlineComponent.js';
+import SearchCamera from './screens/SearchCamera.js';
+import AddCamera from './screens/AddCamera.js';
+import ExemploCss from './screens/ExemploCss.js';
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App2 />,
+        element: <App />,
         errorElement: <ErrorScreen/>,
         children: [
             {
@@ -34,9 +39,25 @@ const router = createBrowserRouter([
                 element: <Contact />
               },
               {
+                path: "inlinecomponent",
+                element: <InlineComponent />
+              },              
+              {
+                path: "addcamera",
+                element: <AddCamera />
+              },              
+              {
+                path: "searchcamera",
+                element: <SearchCamera />
+              },
+              {
+                path: "exemplocss",
+                element: <ExemploCss />
+              },              
+              {
                 path: "itens",
                 element: <ItemScreen />
-              },              
+              },    
               {
                 path: "/item/:id",
                 element: <Item />
