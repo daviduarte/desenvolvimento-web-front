@@ -34,6 +34,8 @@ function App() {
       </Navbar.Collapse>
     </Navbar>
     <Outlet/>
+
+    <p>footer</p>
     </div>
   );
 }
